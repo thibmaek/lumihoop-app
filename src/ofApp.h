@@ -2,11 +2,17 @@
 
 #include "ofMain.h"
 #include "ofxLibwebsockets.h"
+#include "ofxKinect.h"
 
 class ofApp : public ofBaseApp{
 	public:
 		void setup();
+    void update();
     void draw();
+  
+    ofxKinect kinect;
+    ofEasyCam easyCam;
+    ofMesh pointCloud;
 
     ofxLibwebsockets::Client client;
     void onConnect(ofxLibwebsockets::Event& args);
