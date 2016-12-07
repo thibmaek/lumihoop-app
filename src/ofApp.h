@@ -1,7 +1,8 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxLibwebsockets.h"
+#include "ofxSocketIO.h"
+#include "ofxSocketIOData.h"
 #include "ofxKinect.h"
 
 class ofApp : public ofBaseApp{
@@ -10,15 +11,24 @@ class ofApp : public ofBaseApp{
     void update();
     void draw();
   
+    int hoopX, hoopY;
+    float hoopScale;
+  
+    void gotEvent(std::string& name);
+    void onDrawHoop(ofxSocketIOData& data);
+  
+    ofxSocketIO socketIO;
+  
+    bool isConnected;
+    void onConnection();
+    void bindEvents();
+    ofEvent<ofxSocketIOData&> serverEvent;
+    ofEvent<ofxSocketIOData&> pingEvent;
+  
+    std::string address;
+    std::string status;
+  
     ofxKinect kinect;
     ofEasyCam easyCam;
     ofMesh pointCloud;
-
-    ofxLibwebsockets::Client client;
-    void onConnect(ofxLibwebsockets::Event& args);
-    void onOpen(ofxLibwebsockets::Event& args);
-    void onClose(ofxLibwebsockets::Event& args);
-    void onIdle(ofxLibwebsockets::Event& args);
-    void onMessage(ofxLibwebsockets::Event& args);
-    void onBroadcast(ofxLibwebsockets::Event& args);
 };

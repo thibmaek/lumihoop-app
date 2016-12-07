@@ -1,2 +1,2 @@
 ofxKinect
-ofxLibwebsockets
+ofxSocketIO
