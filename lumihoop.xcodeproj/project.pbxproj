@@ -9,293 +9,43 @@
 		<string>46</string>
 		<key>objects</key>
 		<dict>
-			<key>1DDF149C577419CAA93E28E5</key>
-			<dict>
-				<key>fileRef</key>
-				<string>F17ABD05212A93D93C5EC4FA</string>
-				<key>isa</key>
-				<string>PBXBuildFile</string>
-			</dict>
-			<key>F17ABD05212A93D93C5EC4FA</key>
+			<key>424C784EEF7B711BA1DD4562</key>
 			<dict>
 				<key>explicitFileType</key>
-				<string>sourcecode.cpp.cpp</string>
+				<string>sourcecode.c.h</string>
 				<key>fileEncoding</key>
 				<string>30</string>
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>name</key>
-				<string>Util.cpp</string>
+				<string>sio_socket.h</string>
 				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/src/Util.cpp</string>
+				<string>../../../../addons/ofxSocketIO/libs/socket.io-client/include/sio_socket.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>2597E3D95FA2CBD63D8FAA3B</key>
-			<dict>
-				<key>fileRef</key>
-				<string>DFEB2C5CAAEEC3B886F2082D</string>
-				<key>isa</key>
-				<string>PBXBuildFile</string>
-			</dict>
-			<key>DFEB2C5CAAEEC3B886F2082D</key>
+			<key>06665109F8D2D358088CE264</key>
 			<dict>
 				<key>explicitFileType</key>
-				<string>sourcecode.cpp.cpp</string>
+				<string>sourcecode.c.h</string>
 				<key>fileEncoding</key>
 				<string>30</string>
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>name</key>
-				<string>Server.cpp</string>
+				<string>sio_message.h</string>
 				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/src/Server.cpp</string>
+				<string>../../../../addons/ofxSocketIO/libs/socket.io-client/include/sio_message.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>B5ADB3221CED861532CEE3D7</key>
-			<dict>
-				<key>fileRef</key>
-				<string>09EEE016E14AD0DE48C9F873</string>
-				<key>isa</key>
-				<string>PBXBuildFile</string>
-			</dict>
-			<key>09EEE016E14AD0DE48C9F873</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.cpp.cpp</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>Reactor.cpp</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/src/Reactor.cpp</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>B90766B84B5CC9FEB1CEFD7C</key>
-			<dict>
-				<key>fileRef</key>
-				<string>14F06127172149E4595AC86A</string>
-				<key>isa</key>
-				<string>PBXBuildFile</string>
-			</dict>
-			<key>14F06127172149E4595AC86A</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.cpp.cpp</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>Protocol.cpp</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/src/Protocol.cpp</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>B09897FC4879FBD4681DEA0F</key>
-			<dict>
-				<key>fileRef</key>
-				<string>8CC2712587C0633E42BDA1FC</string>
-				<key>isa</key>
-				<string>PBXBuildFile</string>
-			</dict>
-			<key>8CC2712587C0633E42BDA1FC</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.cpp.cpp</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>Events.cpp</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/src/Events.cpp</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>A2EFAC03C5CFD76AAB7F873F</key>
-			<dict>
-				<key>fileRef</key>
-				<string>44D6486D873AE1C01B26EC7A</string>
-				<key>isa</key>
-				<string>PBXBuildFile</string>
-			</dict>
-			<key>44D6486D873AE1C01B26EC7A</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.cpp.cpp</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>Connection.cpp</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/src/Connection.cpp</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>213FDE476BBC2B9B0347CC2F</key>
+			<key>84538363DF095F090FF43FBF</key>
 			<dict>
 				<key>children</key>
 				<array>
-					<string>B449B498E4391EBE43E7158A</string>
-					<string>44D6486D873AE1C01B26EC7A</string>
-					<string>8CC2712587C0633E42BDA1FC</string>
-					<string>14F06127172149E4595AC86A</string>
-					<string>09EEE016E14AD0DE48C9F873</string>
-					<string>DFEB2C5CAAEEC3B886F2082D</string>
-					<string>F17ABD05212A93D93C5EC4FA</string>
-				</array>
-				<key>isa</key>
-				<string>PBXGroup</string>
-				<key>name</key>
-				<string>src</string>
-				<key>sourceTree</key>
-				<string>&lt;group&gt;</string>
-			</dict>
-			<key>E8972AD60CD0DDB3178F6460</key>
-			<dict>
-				<key>fileRef</key>
-				<string>B449B498E4391EBE43E7158A</string>
-				<key>isa</key>
-				<string>PBXBuildFile</string>
-			</dict>
-			<key>B449B498E4391EBE43E7158A</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.cpp.cpp</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>Client.cpp</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/src/Client.cpp</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>C61B79AA9CEA4624C63E5740</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.c.h</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>Util.h</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include/ofxLibwebsockets/Util.h</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>A5C5D4190A6716D016C3620D</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.c.h</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>Server.h</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include/ofxLibwebsockets/Server.h</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>7E2E89E3F9BBE89ED8D2B373</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.c.h</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>Reactor.h</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include/ofxLibwebsockets/Reactor.h</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>EA767A0556F6928A2FB6E3C1</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.c.h</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>Protocol.h</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include/ofxLibwebsockets/Protocol.h</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>C3A1178654232161A8985D2D</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.c.h</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>Events.h</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include/ofxLibwebsockets/Events.h</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>91631AAA40446DE6E21A688B</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.c.h</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>Connection.h</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include/ofxLibwebsockets/Connection.h</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>557E2A608249176E0784E609</key>
-			<dict>
-				<key>children</key>
-				<array>
-					<string>DD396F9A5E9DFEA199258D7B</string>
-					<string>91631AAA40446DE6E21A688B</string>
-					<string>C3A1178654232161A8985D2D</string>
-					<string>EA767A0556F6928A2FB6E3C1</string>
-					<string>7E2E89E3F9BBE89ED8D2B373</string>
-					<string>A5C5D4190A6716D016C3620D</string>
-					<string>C61B79AA9CEA4624C63E5740</string>
-				</array>
-				<key>isa</key>
-				<string>PBXGroup</string>
-				<key>name</key>
-				<string>ofxLibwebsockets</string>
-				<key>sourceTree</key>
-				<string>&lt;group&gt;</string>
-			</dict>
-			<key>108C8D494BF6997F7A730F6E</key>
-			<dict>
-				<key>children</key>
-				<array>
-					<string>557E2A608249176E0784E609</string>
+					<string>CCAE22115F92F8AE795ACECD</string>
+					<string>06665109F8D2D358088CE264</string>
+					<string>424C784EEF7B711BA1DD4562</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
@@ -304,164 +54,24 @@
 				<key>sourceTree</key>
 				<string>&lt;group&gt;</string>
 			</dict>
-			<key>AB97697EC6F10E7234EFF261</key>
+			<key>0C0E305F9C288888E38B440C</key>
 			<dict>
 				<key>children</key>
 				<array>
-					<string>108C8D494BF6997F7A730F6E</string>
-					<string>213FDE476BBC2B9B0347CC2F</string>
+					<string>84538363DF095F090FF43FBF</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
 				<key>name</key>
-				<string>ofxLibwebsockets</string>
+				<string>socket.io-client</string>
 				<key>sourceTree</key>
 				<string>&lt;group&gt;</string>
 			</dict>
-			<key>DD396F9A5E9DFEA199258D7B</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.c.h</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>Client.h</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include/ofxLibwebsockets/Client.h</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>C2570E8EB9438700AF9DD4DD</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.c.h</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>lws_config.h</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/libwebsockets/include/lws_config.h</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>18FCCFAA3CEB7C78C4BFC512</key>
+			<key>18D8FDA29066C0C9A51B3EC9</key>
 			<dict>
 				<key>children</key>
 				<array>
-					<string>19393EABDD8BA2129A590774</string>
-					<string>C2570E8EB9438700AF9DD4DD</string>
-				</array>
-				<key>isa</key>
-				<string>PBXGroup</string>
-				<key>name</key>
-				<string>include</string>
-				<key>sourceTree</key>
-				<string>&lt;group&gt;</string>
-			</dict>
-			<key>CB67BAA20E44B0F45701C777</key>
-			<dict>
-				<key>children</key>
-				<array>
-					<string>18FCCFAA3CEB7C78C4BFC512</string>
-				</array>
-				<key>isa</key>
-				<string>PBXGroup</string>
-				<key>name</key>
-				<string>libwebsockets</string>
-				<key>sourceTree</key>
-				<string>&lt;group&gt;</string>
-			</dict>
-			<key>19393EABDD8BA2129A590774</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.c.h</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>libwebsockets.h</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/libwebsockets/include/libwebsockets.h</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>E7F443FDCD31646B95F70F6C</key>
-			<dict>
-				<key>fileRef</key>
-				<string>C9BAAE7DB81DA2908FA2883C</string>
-				<key>isa</key>
-				<string>PBXBuildFile</string>
-			</dict>
-			<key>C9BAAE7DB81DA2908FA2883C</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.cpp.cpp</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>jsoncpp.cpp</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/jsoncpp/jsoncpp.cpp</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>41BD28CAC3EAE9C0FB035712</key>
-			<dict>
-				<key>explicitFileType</key>
-				<string>sourcecode.c.h</string>
-				<key>fileEncoding</key>
-				<string>30</string>
-				<key>isa</key>
-				<string>PBXFileReference</string>
-				<key>name</key>
-				<string>json.h</string>
-				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/jsoncpp/json/json.h</string>
-				<key>sourceTree</key>
-				<string>SOURCE_ROOT</string>
-			</dict>
-			<key>12CA34DA3B4F71871CBFA23A</key>
-			<dict>
-				<key>children</key>
-				<array>
-					<string>62E37EDD933E1AD5FCD8FEE2</string>
-					<string>41BD28CAC3EAE9C0FB035712</string>
-				</array>
-				<key>isa</key>
-				<string>PBXGroup</string>
-				<key>name</key>
-				<string>json</string>
-				<key>sourceTree</key>
-				<string>&lt;group&gt;</string>
-			</dict>
-			<key>5AC16A8D6EC87B59A03906C1</key>
-			<dict>
-				<key>children</key>
-				<array>
-					<string>12CA34DA3B4F71871CBFA23A</string>
-					<string>C9BAAE7DB81DA2908FA2883C</string>
-				</array>
-				<key>isa</key>
-				<string>PBXGroup</string>
-				<key>name</key>
-				<string>jsoncpp</string>
-				<key>sourceTree</key>
-				<string>&lt;group&gt;</string>
-			</dict>
-			<key>70911A54686309FC932B3014</key>
-			<dict>
-				<key>children</key>
-				<array>
-					<string>5AC16A8D6EC87B59A03906C1</string>
-					<string>CB67BAA20E44B0F45701C777</string>
-					<string>AB97697EC6F10E7234EFF261</string>
+					<string>0C0E305F9C288888E38B440C</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
@@ -470,7 +80,7 @@
 				<key>sourceTree</key>
 				<string>&lt;group&gt;</string>
 			</dict>
-			<key>62E37EDD933E1AD5FCD8FEE2</key>
+			<key>CCAE22115F92F8AE795ACECD</key>
 			<dict>
 				<key>explicitFileType</key>
 				<string>sourcecode.c.h</string>
@@ -479,17 +89,72 @@
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>name</key>
-				<string>json-forwards.h</string>
+				<string>sio_client.h</string>
 				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/libs/jsoncpp/json/json-forwards.h</string>
+				<string>../../../../addons/ofxSocketIO/libs/socket.io-client/include/sio_client.h</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
-			<key>97B6E31FFC746B023496BB48</key>
+			<key>B69E78A192FFCB09CCB75771</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxSocketIOData.h</string>
+				<key>path</key>
+				<string>../../../../addons/ofxSocketIO/src/ofxSocketIOData.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>57DCE342580B70382C6C67D9</key>
+			<dict>
+				<key>fileRef</key>
+				<string>4E8E2B496D8405D3D8003E94</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>4E8E2B496D8405D3D8003E94</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxSocketIOData.cpp</string>
+				<key>path</key>
+				<string>../../../../addons/ofxSocketIO/src/ofxSocketIOData.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>B2C85A7F897B3A2AD0D166FA</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxSocketIO.h</string>
+				<key>path</key>
+				<string>../../../../addons/ofxSocketIO/src/ofxSocketIO.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>90E9E194F97CB6FBFA12FB15</key>
 			<dict>
 				<key>children</key>
 				<array>
-					<string>C2041CC7A518FDDC9493AEE5</string>
+					<string>B6AEB337BEC4F7EE73B047DC</string>
+					<string>B2C85A7F897B3A2AD0D166FA</string>
+					<string>4E8E2B496D8405D3D8003E94</string>
+					<string>B69E78A192FFCB09CCB75771</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
@@ -498,32 +163,39 @@
 				<key>sourceTree</key>
 				<string>&lt;group&gt;</string>
 			</dict>
-			<key>AAE50E341C7382A4EF10AF5A</key>
+			<key>1654D1369875BFEFCE99E26C</key>
 			<dict>
 				<key>children</key>
 				<array>
-					<string>97B6E31FFC746B023496BB48</string>
-					<string>70911A54686309FC932B3014</string>
+					<string>90E9E194F97CB6FBFA12FB15</string>
+					<string>18D8FDA29066C0C9A51B3EC9</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
 				<key>name</key>
-				<string>ofxLibwebsockets</string>
+				<string>ofxSocketIO</string>
 				<key>sourceTree</key>
 				<string>&lt;group&gt;</string>
 			</dict>
-			<key>C2041CC7A518FDDC9493AEE5</key>
+			<key>2D0DDFBCCF9B10C4E3CF6790</key>
+			<dict>
+				<key>fileRef</key>
+				<string>B6AEB337BEC4F7EE73B047DC</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>B6AEB337BEC4F7EE73B047DC</key>
 			<dict>
 				<key>explicitFileType</key>
-				<string>sourcecode.c.h</string>
+				<string>sourcecode.cpp.cpp</string>
 				<key>fileEncoding</key>
 				<string>30</string>
 				<key>isa</key>
 				<string>PBXFileReference</string>
 				<key>name</key>
-				<string>ofxLibwebsockets.h</string>
+				<string>ofxSocketIO.cpp</string>
 				<key>path</key>
-				<string>../../../../addons/ofxLibwebsockets/src/ofxLibwebsockets.h</string>
+				<string>../../../../addons/ofxSocketIO/src/ofxSocketIO.cpp</string>
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
@@ -1149,7 +821,7 @@
 				<key>children</key>
 				<array>
 					<string>9683228C705CA3FF4F2EA945</string>
-					<string>AAE50E341C7382A4EF10AF5A</string>
+					<string>1654D1369875BFEFCE99E26C</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
@@ -1304,7 +976,10 @@
 					<array>
 						<string>$(OF_CORE_FRAMEWORKS) $(OF_CORE_LIBS)</string>
 						<string>../../../../addons/ofxKinect/libs/libusb-1.0/lib/osx/usb-1.0.a</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/libwebsockets/lib/osx/libwebsockets.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_date_time-mt.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_random-mt.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_system-mt.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libsioclient.a</string>
 					</array>
 					<key>HEADER_SEARCH_PATHS</key>
 					<array>
@@ -1323,13 +998,13 @@
 						<string>../../../../addons/ofxKinect/libs/libusb-win32</string>
 						<string>../../../../addons/ofxKinect/src</string>
 						<string>../../../../addons/ofxKinect/src/extra</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/jsoncpp</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/jsoncpp/json</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/libwebsockets/include/</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include/ofxLibwebsockets</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/src</string>
-						<string>../../../../addons/ofxLibwebsockets/src</string>
+						<string>../../../../addons/ofxSocketIO/libs</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/include</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx</string>
+						<string>../../../../addons/ofxSocketIO/src</string>
 					</array>
 					<key>CONFIGURATION_BUILD_DIR</key>
 					<string>$(SRCROOT)/bin/</string>
@@ -1388,7 +1063,10 @@
 					<array>
 						<string>$(OF_CORE_FRAMEWORKS) $(OF_CORE_LIBS)</string>
 						<string>../../../../addons/ofxKinect/libs/libusb-1.0/lib/osx/usb-1.0.a</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/libwebsockets/lib/osx/libwebsockets.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_date_time-mt.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_random-mt.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_system-mt.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libsioclient.a</string>
 					</array>
 					<key>HEADER_SEARCH_PATHS</key>
 					<array>
@@ -1407,13 +1085,13 @@
 						<string>../../../../addons/ofxKinect/libs/libusb-win32</string>
 						<string>../../../../addons/ofxKinect/src</string>
 						<string>../../../../addons/ofxKinect/src/extra</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/jsoncpp</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/jsoncpp/json</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/libwebsockets/include/</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include/ofxLibwebsockets</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/src</string>
-						<string>../../../../addons/ofxLibwebsockets/src</string>
+						<string>../../../../addons/ofxSocketIO/libs</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/include</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx</string>
+						<string>../../../../addons/ofxSocketIO/src</string>
 					</array>
 					<key>CONFIGURATION_BUILD_DIR</key>
 					<string>$(SRCROOT)/bin/</string>
@@ -1481,14 +1159,8 @@
 					<string>01E0DB41EA0410B25964E222</string>
 					<string>A4126F292AC452BFAA9AF9F6</string>
 					<string>A1A5D91898173A0D4DC07FA9</string>
-					<string>E7F443FDCD31646B95F70F6C</string>
-					<string>E8972AD60CD0DDB3178F6460</string>
-					<string>A2EFAC03C5CFD76AAB7F873F</string>
-					<string>B09897FC4879FBD4681DEA0F</string>
-					<string>B90766B84B5CC9FEB1CEFD7C</string>
-					<string>B5ADB3221CED861532CEE3D7</string>
-					<string>2597E3D95FA2CBD63D8FAA3B</string>
-					<string>1DDF149C577419CAA93E28E5</string>
+					<string>2D0DDFBCCF9B10C4E3CF6790</string>
+					<string>57DCE342580B70382C6C67D9</string>
 				</array>
 				<key>isa</key>
 				<string>PBXSourcesBuildPhase</string>
@@ -1573,7 +1245,10 @@
 					<array>
 						<string>$(OF_CORE_FRAMEWORKS) $(OF_CORE_LIBS)</string>
 						<string>../../../../addons/ofxKinect/libs/libusb-1.0/lib/osx/usb-1.0.a</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/libwebsockets/lib/osx/libwebsockets.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_date_time-mt.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_random-mt.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_system-mt.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libsioclient.a</string>
 					</array>
 					<key>HEADER_SEARCH_PATHS</key>
 					<array>
@@ -1592,13 +1267,13 @@
 						<string>../../../../addons/ofxKinect/libs/libusb-win32</string>
 						<string>../../../../addons/ofxKinect/src</string>
 						<string>../../../../addons/ofxKinect/src/extra</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/jsoncpp</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/jsoncpp/json</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/libwebsockets/include/</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include/ofxLibwebsockets</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/src</string>
-						<string>../../../../addons/ofxLibwebsockets/src</string>
+						<string>../../../../addons/ofxSocketIO/libs</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/include</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx</string>
+						<string>../../../../addons/ofxSocketIO/src</string>
 					</array>
 					<key>COMBINE_HIDPI_IMAGES</key>
 					<string>YES</string>
@@ -1647,7 +1322,10 @@
 					<array>
 						<string>$(OF_CORE_FRAMEWORKS) $(OF_CORE_LIBS)</string>
 						<string>../../../../addons/ofxKinect/libs/libusb-1.0/lib/osx/usb-1.0.a</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/libwebsockets/lib/osx/libwebsockets.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_date_time-mt.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_random-mt.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_system-mt.a</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libsioclient.a</string>
 					</array>
 					<key>HEADER_SEARCH_PATHS</key>
 					<array>
@@ -1666,13 +1344,13 @@
 						<string>../../../../addons/ofxKinect/libs/libusb-win32</string>
 						<string>../../../../addons/ofxKinect/src</string>
 						<string>../../../../addons/ofxKinect/src/extra</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/jsoncpp</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/jsoncpp/json</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/libwebsockets/include/</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/include/ofxLibwebsockets</string>
-						<string>../../../../addons/ofxLibwebsockets/libs/ofxLibwebsockets/src</string>
-						<string>../../../../addons/ofxLibwebsockets/src</string>
+						<string>../../../../addons/ofxSocketIO/libs</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/include</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l</string>
+						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx</string>
+						<string>../../../../addons/ofxSocketIO/src</string>
 					</array>
 					<key>COMBINE_HIDPI_IMAGES</key>
 					<string>YES</string>
