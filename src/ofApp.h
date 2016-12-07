@@ -11,23 +11,28 @@ class ofApp : public ofBaseApp{
     void update();
     void draw();
   
+    /* - Hoop variables - */
     int hoopX, hoopY;
     float hoopScale;
-  
-    void gotEvent(std::string& name);
-    void onDrawHoop(ofxSocketIOData& data);
-  
+
+    /* - ofxSocketIO - */
     ofxSocketIO socketIO;
+      // socket methods
+      void onConnection();
+      void bindEvents();
+      void gotEvent(std::string& name);
   
-    bool isConnected;
-    void onConnection();
-    void bindEvents();
-    ofEvent<ofxSocketIOData&> serverEvent;
-    ofEvent<ofxSocketIOData&> pingEvent;
+      // socket events & responses
+      ofEvent<ofxSocketIOData&> hoopPlacedEvent;
+      void drawHoop(ofxSocketIOData& data);
   
-    std::string address;
-    std::string status;
+      // socket variables
+      bool isConnected;
+      std::string address;
+      std::string status;
   
+  
+    /* - ofxKinect, ofEasyCam, ofMesh - */
     ofxKinect kinect;
     ofEasyCam easyCam;
     ofMesh pointCloud;

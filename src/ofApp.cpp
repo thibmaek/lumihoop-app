@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+  ofSetWindowShape(1024, 768);
   isConnected = false;
   address = "http://localhost:3000";
   status = "not connected";
@@ -9,13 +10,14 @@ void ofApp::setup(){
   ofAddListener(socketIO.notifyEvent, this, &ofApp::gotEvent);
   ofAddListener(socketIO.connectionEvent, this, &ofApp::onConnection);
   
-//  kinect.init();
-//  kinect.open();
-//  kinect.isConnected() ? ofLog() << "kinect connected" : ofLog() << "kinect not connected";
-//  
+  kinect.init();
+  kinect.open();
+  kinect.isConnected() ? ofLog() << "kinect connected" : ofLog() << "kinect not connected";
+//
 //  easyCam.enableMouseInput();
 //  pointCloud.setMode(OF_PRIMITIVE_POINTS);
   
+  ofSetCircleResolution(64);
   ofSetFrameRate(60);
 }
 
@@ -38,10 +40,14 @@ void ofApp::update() {
 
 void ofApp::draw() {
   ofBackground(0);
-  ofDrawBitmapStringHighlight(ofApp::status, 20, 20);
-  ofSetColor(255, 105, 180);
-  ofNoFill();
-  ofDrawCircle(hoopX, hoopY, hoopScale);
+  // ofDrawBitmapStringHighlight(ofApp::status, 20, 20);
+  
+  if(hoopX && hoopY && hoopScale) {
+    ofSetColor(255, 105, 180);
+    ofNoFill();
+    ofSetLineWidth(5);
+    ofDrawCircle(hoopX, hoopY, hoopScale * 100);
+  }
 //  easyCam.begin();
 //  glPushMatrix();
 //  ofScale(1, -1, -1);
@@ -59,22 +65,24 @@ void ofApp::onConnection () {
 }
 
 void ofApp::bindEvents () {
-  std::string serverEventName = "drawHoop";
-  socketIO.bindEvent(serverEvent, serverEventName);
-  ofAddListener(serverEvent, this, &ofApp::onDrawHoop);
+  std::string hoopPlacedEventName = "drawHoop";
+  socketIO.bindEvent(hoopPlacedEvent, hoopPlacedEventName);
+  ofAddListener(hoopPlacedEvent, this, &ofApp::drawHoop);
 }
 
 void ofApp::gotEvent(string& name) {
+  ofLogNotice("ofxSocketIO[gotEvent]", name);
   status = name;
 }
 
 //--------------------------------------------------------------
-void ofApp::onDrawHoop (ofxSocketIOData& data) {
+// event callbacks
+void ofApp::drawHoop (ofxSocketIOData& data) {
+  ofLogNotice("ofxSocketIO[pageX]", ofToString(data.getIntValue("pageX")));
+  ofLogNotice("ofxSocketIO[pageY]", ofToString(data.getIntValue("pageY")));
+  ofLogNotice("ofxSocketIO[scale]", ofToString(data.getFloatValue("scale")));
+  
   hoopX = data.getIntValue("pageX");
   hoopY = data.getIntValue("pageY");
   hoopScale = data.getFloatValue("scale");
-  
-  ofLogNotice("ofxSocketIO", ofToString(data.getIntValue("pageX")));
-  ofLogNotice("ofxSocketIO", ofToString(data.getIntValue("pageY")));
-  ofLogNotice("ofxSocketIO", ofToString(data.getFloatValue("scale")));
 }
