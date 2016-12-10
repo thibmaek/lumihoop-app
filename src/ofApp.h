@@ -4,12 +4,17 @@
 #include "ofxSocketIO.h"
 #include "ofxSocketIOData.h"
 #include "ofxKinect.h"
+#include "ofxGui.h"
 
 class ofApp : public ofBaseApp{
 	public:
 		void setup();
     void update();
     void draw();
+    
+    /* - ofxGui - */
+    ofxPanel gui;
+    ofxFloatSlider slider;
   
     /* - Hoop variables - */
     int hoopX, hoopY;

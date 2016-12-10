@@ -22,6 +22,10 @@ void ofApp::setup(){
   ofSetWindowShape(1024, 768);
   ofSetCircleResolution(64);
   ofSetFrameRate(60);
+  
+  // MARK: - Initialise debug interface
+  gui.setup();
+  gui.add(slider.setup("size offset", 0.5, 0, 1.0));
 }
 
 void ofApp::update() {
@@ -46,6 +50,10 @@ void ofApp::update() {
 void ofApp::draw() {
   ofBackground(0);
   // ofDrawBitmapStringHighlight(ofApp::status, 20, 20);
+    
+  // MARK: - Draw debug interface
+  // Use size offset to compensate beamer distance
+  gui.draw();
   
   // MARK: - Draw hoop if global vars are not null
   if(hoopX && hoopY && hoopScale) {
