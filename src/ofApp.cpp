@@ -22,6 +22,12 @@ void ofApp::setup(){
   ofSetWindowShape(1024, 768);
   ofSetCircleResolution(64);
   ofSetFrameRate(60);
+  
+  // MARK: - Initialise debug interface
+  gui.setup();
+  gui.add(slider.setup("Beamer distance", 0.5, 0, 1.0));
+  
+  debugMode = true;
 }
 
 void ofApp::update() {
@@ -45,7 +51,6 @@ void ofApp::update() {
 
 void ofApp::draw() {
   ofBackground(0);
-  // ofDrawBitmapStringHighlight(ofApp::status, 20, 20);
   
   // MARK: - Draw hoop if global vars are not null
   if(hoopX && hoopY && hoopScale) {
@@ -56,15 +61,13 @@ void ofApp::draw() {
   }
   
   // MARK: - Display the pointcloud & start easyCam
-  easyCam.begin();
-  glPushMatrix();
-  ofScale(1, -1, -1);
-  ofTranslate(0, 0, -100);
-  ofEnableDepthTest();
-  pointCloud.drawVertices();
-  ofDisableDepthTest();
-  ofPopMatrix();
-  easyCam.end();
+  drawPointCloud();
+  
+  // MARK: - Draw debug interface
+  if(debugMode) {
+    ofDrawBitmapStringHighlight(ofApp::status, 10, 100);
+    gui.draw();
+  }
 }
 
 // MARK: - #BIND_ON_CONNECT
@@ -84,6 +87,20 @@ void ofApp::bindEvents () {
 void ofApp::gotEvent(string& name) {
   ofLogNotice("ofxSocketIO[gotEvent]", name);
   status = name;
+}
+
+//--------------------------------------------------------------
+// MARK: - #DRAWS
+void ofApp::drawPointCloud() {
+  easyCam.begin();
+  glPushMatrix();
+  ofScale(1, -1, -1);
+  ofTranslate(0, 0, -100);
+  ofEnableDepthTest();
+  pointCloud.drawVertices();
+  ofDisableDepthTest();
+  ofPopMatrix();
+  easyCam.end();
 }
 
 //--------------------------------------------------------------
