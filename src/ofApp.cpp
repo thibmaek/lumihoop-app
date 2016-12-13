@@ -9,6 +9,7 @@ void ofApp::setup(){
   socketIO.setup(address);
   ofAddListener(socketIO.notifyEvent, this, &ofApp::gotEvent);
   ofAddListener(socketIO.connectionEvent, this, &ofApp::onConnection);
+  hoopX = 0; hoopY = 0; hoopScale = 0;
   
   // MARK: - Initialise Kinect connection
   kinect.init();
@@ -22,6 +23,7 @@ void ofApp::setup(){
   ofSetWindowShape(640, 480);
   ofSetCircleResolution(64);
   ofSetFrameRate(60);
+  pointsDetected = 0;
   
   // MARK: - Initialise debug interface
   gui.setup();
@@ -29,22 +31,31 @@ void ofApp::setup(){
 	gui.add(kinectXSlider.setup("Kinect Scale X", 1.6, -2, 2));
 	gui.add(kinectYSlider.setup("Kinect Scale Y", -1.6, -2, 2));
 	gui.add(kinectZSlider.setup("Kinect Scale Z", -1, -2, 2));
-	gui.add(kinectAngleSlider.setup("Kinect Angle", 0, -1, 1));
-	gui.add(kinectSphereZSlider.setup("Sphere Z", 0, -500, 800));
+	gui.add(kinectAngleSlider.setup("Kinect Angle", 0, -30, 30));
+	gui.add(kinectSphereZSlider.setup("Sphere Z", 0, -500, 2000));
 }
 
 void ofApp::update() {
   // MARK: - Generate pointcloud from Kinect data
+  pointsDetected = 0;
   if(kinect.isConnected()) {
     kinect.update();
     if(kinect.isFrameNewDepth()) {
       pointCloud.clear();
       for(int y = 0; y < kinect.height; y++) {
         for(int x= 0; x < kinect.width; x++) {
-          if(kinect.getDistanceAt(x, y) > 0) {
+          int z = kinect.getDistanceAt(x, y);
+          if(z > 0) {
             pointCloud.addColor(kinect.getColorAt(x, y));
             ofVec3f pt = kinect.getWorldCoordinateAt(x, y);
             pointCloud.addVertex(pt);
+          }
+          if(x > hoopX - (hoopScale*100)/2 && x < hoopX + (hoopScale*100)/2) {
+            if(y > hoopY - (hoopScale*100)/2 && y < hoopY + (hoopScale*100)/2) {
+              if(z > kinectSphereZSlider - (hoopScale*100)/2 && z < kinectSphereZSlider + (hoopScale*100)/2) {
+                pointsDetected++;
+              }
+            }
           }
         }
       }
@@ -69,6 +80,7 @@ void ofApp::draw() {
   // MARK: - Draw debug interface
   if(debugMode) {
     gui.draw();
+    kinect.setCameraTiltAngle(kinectAngleSlider);
   }
 }
 
@@ -91,7 +103,6 @@ void ofApp::gotEvent(string& name) {
   status = name;
 }
 
-//--------------------------------------------------------------
 // MARK: - #DRAWS
 void ofApp::drawPointCloud() {
   easyCam.begin();
@@ -105,12 +116,12 @@ void ofApp::drawPointCloud() {
   ofDisableDepthTest();
   glPopMatrix();
 	ofTranslate(-1024/2, -768/2, 0);
+  if(pointsDetected > 100) ofLog() << "JA EINDELIJK";
 	if (hoopX && hoopY && hoopScale) ofDrawSphere(hoopX, hoopY, kinectSphereZSlider, hoopScale * 100);
 	ofPopMatrix();
   easyCam.end();
 }
 
-//--------------------------------------------------------------
 // MARK: - #EVENTS
 void ofApp::drawHoop (ofxSocketIOData& data) {
   // MARK: - Log data to console

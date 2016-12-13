@@ -18,6 +18,7 @@ class ofApp : public ofBaseApp{
     /* - global variables - */
     int hoopX, hoopY;
     float hoopScale;
+    int pointsDetected;
     const char* debugMode = std::getenv("LUMIHOOPDEBUG");
   
     /* - instances - */
