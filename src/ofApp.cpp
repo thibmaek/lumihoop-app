@@ -29,7 +29,7 @@ void ofApp::setup(){
 	gui.add(kinectXSlider.setup("Kinect Scale X", 1.6, -2, 2));
 	gui.add(kinectYSlider.setup("Kinect Scale Y", -1.6, -2, 2));
 	gui.add(kinectZSlider.setup("Kinect Scale Z", -1, -2, 2));
-	gui.add(kinectAngleSlider.setup("Kinect Angle", 0, 0, 1));
+	gui.add(kinectAngleSlider.setup("Kinect Angle", 0, -1, 1));
   
   debugMode = true;
 }
@@ -103,6 +103,8 @@ void ofApp::drawPointCloud() {
   ofTranslate(0, 0, -100);
   ofEnableDepthTest();
   pointCloud.drawVertices();
+  ofNoFill();
+  if (hoopX && hoopY && hoopScale) ofDrawSphere(hoopX, hoopY, 1000, hoopScale * 100);
   ofDisableDepthTest();
   ofPopMatrix();
   easyCam.end();
