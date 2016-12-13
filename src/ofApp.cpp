@@ -61,7 +61,7 @@ void ofApp::draw() {
     ofSetColor(255, 105, 180);
     ofNoFill();
     ofSetLineWidth(5);
-    ofDrawCircle(hoopX/1.6, hoopY/1.6, (hoopScale * 100)/1.6);
+    ofDrawCircle(hoopX, hoopY, (hoopScale * 100));
   }
   
   // MARK: - Display the pointcloud & start easyCam
