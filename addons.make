@@ -1,2 +1,3 @@
+ofxGui
 ofxKinect
 ofxSocketIO
