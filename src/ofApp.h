@@ -26,7 +26,11 @@ class ofApp : public ofBaseApp{
     ofEasyCam easyCam;
     ofMesh pointCloud;
     ofxPanel gui;
-    ofxFloatSlider slider;
+    ofxFloatSlider beamerDistanceSlider;
+    ofxFloatSlider kinectXSlider;
+    ofxFloatSlider kinectYSlider;
+    ofxFloatSlider kinectZSlider;
+		ofxFloatSlider kinectAngleSlider;
 
   
     // socket methods

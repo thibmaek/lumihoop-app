@@ -1,0 +1,7 @@
+<group>
+	<Beamer_distance>0.5</Beamer_distance>
+	<Kinect_Scale_X>1.6</Kinect_Scale_X>
+	<Kinect_Scale_Y>-1.6</Kinect_Scale_Y>
+	<Kinect_Scale_Z>-1</Kinect_Scale_Z>
+<group/>
+</group>

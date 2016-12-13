@@ -19,13 +19,17 @@ void ofApp::setup(){
   }
   
   // MARK: - Preset drawing setting
-  ofSetWindowShape(1024, 768);
+  ofSetWindowShape(640, 480);
   ofSetCircleResolution(64);
   ofSetFrameRate(60);
   
   // MARK: - Initialise debug interface
   gui.setup();
-  gui.add(slider.setup("Beamer distance", 0.5, 0, 1.0));
+  gui.add(beamerDistanceSlider.setup("Beamer distance", 0.5, 0, 1.0));
+	gui.add(kinectXSlider.setup("Kinect Scale X", 1.6, -2, 2));
+	gui.add(kinectYSlider.setup("Kinect Scale Y", -1.6, -2, 2));
+	gui.add(kinectZSlider.setup("Kinect Scale Z", -1, -2, 2));
+	gui.add(kinectAngleSlider.setup("Kinect Angle", 0, 0, 1));
   
   debugMode = true;
 }
@@ -39,7 +43,7 @@ void ofApp::update() {
       for(int y = 0; y < kinect.height; y++) {
         for(int x= 0; x < kinect.width; x++) {
           if(kinect.getDistanceAt(x, y) > 0) {
-            pointCloud.addColor(ofColor(0xff));
+            pointCloud.addColor(kinect.getColorAt(x, y));
             ofVec3f pt = kinect.getWorldCoordinateAt(x, y);
             pointCloud.addVertex(pt);
           }
@@ -57,7 +61,7 @@ void ofApp::draw() {
     ofSetColor(255, 105, 180);
     ofNoFill();
     ofSetLineWidth(5);
-    ofDrawCircle(hoopX, hoopY, hoopScale * 100);
+    ofDrawCircle(hoopX/1.6, hoopY/1.6, (hoopScale * 100)/1.6);
   }
   
   // MARK: - Display the pointcloud & start easyCam
@@ -67,6 +71,7 @@ void ofApp::draw() {
   if(debugMode) {
     ofDrawBitmapStringHighlight(ofApp::status, 10, 100);
     gui.draw();
+		kinect.setCameraTiltAngle(kinectAngleSlider);
   }
 }
 
@@ -94,7 +99,7 @@ void ofApp::gotEvent(string& name) {
 void ofApp::drawPointCloud() {
   easyCam.begin();
   glPushMatrix();
-  ofScale(1, -1, -1);
+	debugMode ? ofScale(kinectXSlider, kinectYSlider, kinectZSlider) : ofScale(1.6, -1.6, -1);
   ofTranslate(0, 0, -100);
   ofEnableDepthTest();
   pointCloud.drawVertices();
