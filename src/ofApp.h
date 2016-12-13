@@ -31,6 +31,7 @@ class ofApp : public ofBaseApp{
     ofxFloatSlider kinectYSlider;
     ofxFloatSlider kinectZSlider;
 		ofxFloatSlider kinectAngleSlider;
+		ofxFloatSlider kinectSphereZSlider;
 
   
     // socket methods

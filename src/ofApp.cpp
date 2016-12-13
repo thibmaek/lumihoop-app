@@ -30,6 +30,7 @@ void ofApp::setup(){
 	gui.add(kinectYSlider.setup("Kinect Scale Y", -1.6, -2, 2));
 	gui.add(kinectZSlider.setup("Kinect Scale Z", -1, -2, 2));
 	gui.add(kinectAngleSlider.setup("Kinect Angle", 0, -1, 1));
+	gui.add(kinectSphereZSlider.setup("Sphere Z", 0, -500, 800));
   
   debugMode = true;
 }
@@ -100,13 +101,16 @@ void ofApp::drawPointCloud() {
   easyCam.begin();
   glPushMatrix();
 	debugMode ? ofScale(kinectXSlider, kinectYSlider, kinectZSlider) : ofScale(1.6, -1.6, -1);
-  ofTranslate(0, 0, -100);
+  ofTranslate(0, 0, 0);
+	ofPushMatrix();
   ofEnableDepthTest();
   pointCloud.drawVertices();
   ofNoFill();
-  if (hoopX && hoopY && hoopScale) ofDrawSphere(hoopX, hoopY, 1000, hoopScale * 100);
   ofDisableDepthTest();
-  ofPopMatrix();
+  glPopMatrix();
+	ofTranslate(-1024/2, -768/2, 0);
+	if (hoopX && hoopY && hoopScale) ofDrawSphere(hoopX, hoopY, kinectSphereZSlider, hoopScale * 100);
+	ofPopMatrix();
   easyCam.end();
 }
 
