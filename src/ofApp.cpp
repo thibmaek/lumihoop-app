@@ -31,8 +31,6 @@ void ofApp::setup(){
 	gui.add(kinectZSlider.setup("Kinect Scale Z", -1, -2, 2));
 	gui.add(kinectAngleSlider.setup("Kinect Angle", 0, -1, 1));
 	gui.add(kinectSphereZSlider.setup("Sphere Z", 0, -500, 800));
-  
-  debugMode = true;
 }
 
 void ofApp::update() {
@@ -70,9 +68,7 @@ void ofApp::draw() {
   
   // MARK: - Draw debug interface
   if(debugMode) {
-    ofDrawBitmapStringHighlight(ofApp::status, 10, 100);
     gui.draw();
-		kinect.setCameraTiltAngle(kinectAngleSlider);
   }
 }
 

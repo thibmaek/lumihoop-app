@@ -18,7 +18,7 @@ class ofApp : public ofBaseApp{
     /* - global variables - */
     int hoopX, hoopY;
     float hoopScale;
-    bool debugMode = false;
+    const char* debugMode = std::getenv("LUMIHOOPDEBUG");
   
     /* - instances - */
     ofxSocketIO socketIO;
