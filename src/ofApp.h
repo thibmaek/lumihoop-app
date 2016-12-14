@@ -16,8 +16,8 @@ class ofApp : public ofBaseApp{
     void drawPointCloud();
   
     /* - global variables - */
-    int hoopX, hoopY;
-    float hoopScale;
+    float hoopScale, xPos, yPos;
+	  int numPointsInRegion, scaleFactorHoop;
     bool debugMode = false;
   
     /* - instances - */
@@ -26,7 +26,7 @@ class ofApp : public ofBaseApp{
     ofEasyCam easyCam;
     ofMesh pointCloud;
     ofxPanel gui;
-    ofxFloatSlider beamerDistanceSlider;
+    ofxFloatSlider kinectDistanceSlider;
     ofxFloatSlider kinectXSlider;
     ofxFloatSlider kinectYSlider;
     ofxFloatSlider kinectZSlider;
