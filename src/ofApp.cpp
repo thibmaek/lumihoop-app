@@ -9,15 +9,14 @@ void ofApp::setup(){
   socketIO.setup(address);
   ofAddListener(socketIO.notifyEvent, this, &ofApp::gotEvent);
   ofAddListener(socketIO.connectionEvent, this, &ofApp::onConnection);
-	
+
   // MARK: - Initialise Kinect connection
   kinect.init();
   kinect.open();
 	ofSetFrameRate(60);
 	easyCam.enableMouseInput();
 	pointCloud.setMode(OF_PRIMITIVE_POINTS);
-  
-  // MARK: - Preset drawing setting
+	
 	//ofSetWindowShape(640, 480);
 	
   // MARK: - Initialise debug interface
@@ -43,8 +42,8 @@ void ofApp::update() {
       pointCloud.clear();
       for(int y = 0; y < kinect.height; y++) {
         for(int x= 0; x < kinect.width; x++) {
-					int z = kinect.getDistanceAt(x, y);
-					if(z > 0) {
+          int z = kinect.getDistanceAt(x, y);
+          if(z > 0) {
             pointCloud.addColor(kinect.getColorAt(x, y));
             ofVec3f pt = kinect.getWorldCoordinateAt(x, y);
             pointCloud.addVertex(pt);
@@ -88,7 +87,7 @@ void ofApp::draw() {
   // MARK: - Draw debug interface
   if(debugMode) {
     gui.draw();
-		kinect.setCameraTiltAngle(kinectAngleSlider);
+    kinect.setCameraTiltAngle(kinectAngleSlider);
   }
 }
 
@@ -111,8 +110,6 @@ void ofApp::gotEvent(string& name) {
   status = name;
 }
 
-
-//--------------------------------------------------------------
 // MARK: - #EVENTS
 void ofApp::drawHoop (ofxSocketIOData& data) {
   // MARK: - Log data to console

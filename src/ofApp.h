@@ -19,7 +19,8 @@ class ofApp : public ofBaseApp{
     float hoopScale, xPos, yPos;
 	  int numPointsInRegion, scaleFactorHoop;
     bool debugMode = false;
-  
+//		const char* debugMode = std::getenv("LUMIHOOPDEBUG");
+	
     /* - instances - */
     ofxSocketIO socketIO;
     ofxKinect kinect;
