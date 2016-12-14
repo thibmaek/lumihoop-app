@@ -21,7 +21,7 @@ void ofApp::setup(){
 	
   // MARK: - Initialise debug interface
   gui.setup();
-  gui.add(kinectDistanceSlider.setup("Kinect distance", 80, 80, 3000));
+  gui.add(kinectDistanceSlider.setup("Kinect distance", 2850, 80, 3000));
 	gui.add(kinectXSlider.setup("Kinect Scale X", 1.6, -2, 2));
 	gui.add(kinectYSlider.setup("Kinect Scale Y", -1.6, -2, 2));
 	gui.add(kinectZSlider.setup("Kinect Scale Z", -1, -2, 2));
@@ -76,10 +76,13 @@ void ofApp::draw() {
 	if(numPointsInRegion > 100) {
 		ofFill();
 		ofLogNotice("DETECTED");
+		std::string hoopHitEventName = "detectHit";
+		std::string param = "param";
+		socketIO.emit(hoopHitEventName, param);
 	} else {
 		ofNoFill();
 	}
-	ofDrawBox(xPos, yPos, kinectDistanceSlider, hoopScale, hoopScale, 100);
+	ofDrawBox(xPos, yPos, kinectDistanceSlider-220, hoopScale, hoopScale, 400);
 	ofPopMatrix();
 	
 	easyCam.end();
@@ -118,7 +121,7 @@ void ofApp::drawHoop (ofxSocketIOData& data) {
   ofLogNotice("ofxSocketIO[scale]", ofToString(data.getFloatValue("scale")));
 
   // MARK: - Assign data values to global variables
-  xPos = data.getFloatValue("relX");
-  yPos = data.getFloatValue("relY");
-  hoopScale = (data.getFloatValue("scale"))*scaleFactorHoop;
+  xPos = (data.getFloatValue("relX"))* ofGetWidth();
+  yPos = (data.getFloatValue("relY"))* ofGetHeight();
+  hoopScale = (data.getFloatValue("scale"))* scaleFactorHoop;
 }
