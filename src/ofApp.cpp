@@ -1,5 +1,7 @@
 #include "ofApp.h"
 
+ofPlanePrimitive plane;
+
 //--------------------------------------------------------------
 void ofApp::setup(){
   // MARK: - Initialise socket connection
@@ -30,8 +32,12 @@ void ofApp::setup(){
 	
 	numPointsInRegion = 0;
 	scaleFactorHoop = 200;
-	
-	debugMode = true;
+  
+  // MARK: - Load textures & setup plane
+  texture_plain.load("texture_plain.png");
+  texture_glowing.load("texture_glowing.png");
+  plane.set(hoopScale, hoopScale);
+  plane.setPosition(xPos, yPos, kinectDistanceSlider-220);
 }
 
 void ofApp::update() {
@@ -82,6 +88,11 @@ void ofApp::draw() {
 	} else {
 		ofNoFill();
 	}
+  
+  texture_plain.bind();
+  plane.draw();
+  texture_plain.unbind();
+  
 	ofDrawBox(xPos, yPos, kinectDistanceSlider-220, hoopScale, hoopScale, 400);
 	ofPopMatrix();
 	
