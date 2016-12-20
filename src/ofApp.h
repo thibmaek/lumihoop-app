@@ -19,6 +19,7 @@ class ofApp : public ofBaseApp{
     float hoopScale, xPos, yPos;
 	  int numPointsInRegion, scaleFactorHoop;
 		const char* debugMode = std::getenv("LUMIHOOPDEBUG");
+  	bool showmsg;
 	
     /* - instances - */
     ofxSocketIO socketIO;
@@ -26,7 +27,8 @@ class ofApp : public ofBaseApp{
     ofEasyCam easyCam;
     ofMesh pointCloud;
     ofImage texture_plain;
-    ofImage texture_glowing;
+    ofImage bg;
+	  ofImage score_msg;
 	  ofSoundPlayer scoreSound;
     ofxPanel gui;
     ofxFloatSlider kinectDistanceSlider;

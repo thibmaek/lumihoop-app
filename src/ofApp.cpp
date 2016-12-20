@@ -26,16 +26,19 @@ void ofApp::setup(){
   gui.add(kinectDistanceSlider.setup("Kinect distance", 2850, 80, 3000));
 	gui.add(kinectXSlider.setup("Kinect Scale X", 1.6, -2, 2));
 	gui.add(kinectYSlider.setup("Kinect Scale Y", -1.6, -2, 2));
-	gui.add(kinectZSlider.setup("Kinect Scale Z", -1, -2, 2));
+	gui.add(kinectZSlider.setup("Kinect Scale Z", -0.24, -2, 2));
 	gui.add(kinectAngleSlider.setup("Kinect Angle", 0, -1, 1));
 	
 	
 	numPointsInRegion = 0;
 	scaleFactorHoop = 200;
+	showmsg = false;
   
   // MARK: - Load textures & sounds
   texture_plain.load("texture_plain.png");
+	score_msg.load("score.png");
 	scoreSound.load("score.mp3");
+	bg.load("bg.jpg");
 }
 
 void ofApp::update() {
@@ -66,6 +69,7 @@ void ofApp::update() {
 
 void ofApp::draw() {
   ofBackground(0);
+	bg.draw(0,0,ofGetWidth(),ofGetHeight());
   
   // MARK: - Display the pointcloud & start easyCam
 	easyCam.begin();
@@ -74,7 +78,7 @@ void ofApp::draw() {
 	ofTranslate(0, 0, -1000);
 	
 	ofEnableDepthTest();
-	pointCloud.drawVertices();
+	//pointCloud.drawVertices();
 	ofDisableDepthTest();
 	
 	if(numPointsInRegion > 100) {
@@ -84,15 +88,26 @@ void ofApp::draw() {
 		std::string param = "param";
 		socketIO.emit(hoopHitEventName, param);
 		scoreSound.play();
+		hoopScale = 0;
+		showmsg = true;
 	} else {
 		ofNoFill();
+	}
+	
+	if(showmsg == true){
+		ofPushMatrix();
+		ofScale(1, -1, 1);
+		score_msg.draw(-320,-240, kinectDistanceSlider-200, 640, 480);
+		ofPopMatrix();
+	} else {
+		score_msg.draw(-320,-240, kinectDistanceSlider-200, 0, 0);
 	}
 	
 	
 	texture_plain.draw(xPos-(hoopScale/2), yPos-(hoopScale/2), kinectDistanceSlider-220, hoopScale, hoopScale);
 	
   
-	ofDrawBox(xPos, yPos, kinectDistanceSlider-220, hoopScale, hoopScale, 400);
+	//ofDrawBox(xPos, yPos, kinectDistanceSlider-220, hoopScale, hoopScale, 400);
 	ofPopMatrix();
 	
 	easyCam.end();
@@ -131,7 +146,14 @@ void ofApp::drawHoop (ofxSocketIOData& data) {
   ofLogNotice("ofxSocketIO[scale]", ofToString(data.getFloatValue("scale")));
 
   // MARK: - Assign data values to global variables
+	if(data.getFloatValue("scale") > 2.4){
+		hoopScale = 2.2 * scaleFactorHoop;
+	} else {
+		hoopScale = (data.getFloatValue("scale"))* scaleFactorHoop;
+	}
+	
   xPos = (data.getFloatValue("relX"))* ofGetWidth();
   yPos = (data.getFloatValue("relY"))* ofGetHeight();
-  hoopScale = (data.getFloatValue("scale"))* scaleFactorHoop;
+	
+	showmsg = false;
 }
