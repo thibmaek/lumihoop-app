@@ -27,6 +27,7 @@ class ofApp : public ofBaseApp{
     ofMesh pointCloud;
     ofImage texture_plain;
     ofImage texture_glowing;
+	  ofSoundPlayer scoreSound;
     ofxPanel gui;
     ofxFloatSlider kinectDistanceSlider;
     ofxFloatSlider kinectXSlider;

@@ -33,11 +33,9 @@ void ofApp::setup(){
 	numPointsInRegion = 0;
 	scaleFactorHoop = 200;
   
-  // MARK: - Load textures & setup plane
+  // MARK: - Load textures & sounds
   texture_plain.load("texture_plain.png");
-  texture_glowing.load("texture_glowing.png");
-  plane.set(hoopScale, hoopScale);
-  plane.setPosition(xPos, yPos, kinectDistanceSlider-220);
+	scoreSound.load("score.mp3");
 }
 
 void ofApp::update() {
@@ -85,13 +83,14 @@ void ofApp::draw() {
 		std::string hoopHitEventName = "detectHit";
 		std::string param = "param";
 		socketIO.emit(hoopHitEventName, param);
+		scoreSound.play();
 	} else {
 		ofNoFill();
 	}
-  
-  texture_plain.bind();
-  plane.draw();
-  texture_plain.unbind();
+	
+	
+	texture_plain.draw(xPos-(hoopScale/2), yPos-(hoopScale/2), kinectDistanceSlider-220, hoopScale, hoopScale);
+	
   
 	ofDrawBox(xPos, yPos, kinectDistanceSlider-220, hoopScale, hoopScale, 400);
 	ofPopMatrix();
