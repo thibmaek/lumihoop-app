@@ -18,14 +18,15 @@ class ofApp : public ofBaseApp{
     /* - global variables - */
     float hoopScale, xPos, yPos;
 	  int numPointsInRegion, scaleFactorHoop;
-    bool debugMode = false;
-//		const char* debugMode = std::getenv("LUMIHOOPDEBUG");
+		const char* debugMode = std::getenv("LUMIHOOPDEBUG");
 	
     /* - instances - */
     ofxSocketIO socketIO;
     ofxKinect kinect;
     ofEasyCam easyCam;
     ofMesh pointCloud;
+    ofImage texture_plain;
+    ofImage texture_glowing;
     ofxPanel gui;
     ofxFloatSlider kinectDistanceSlider;
     ofxFloatSlider kinectXSlider;
