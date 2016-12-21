@@ -35,13 +35,21 @@ void ofApp::setup(){
 	showmsg = false;
   
   // MARK: - Load textures & sounds
-  texture_plain.load("texture_plain.png");
-	score_msg.load("score.png");
 	scoreSound.load("score.mp3");
-	bg.load("bg.jpg");
+	circle_alpha.setPixelFormat(OF_PIXELS_BGRA);
+	circle_alpha.load("circle_alpha.mov");
+	circle_alpha.play();
+	bg_anim.load("bg.mov");
+	bg_anim.play();
+	score_anim.setPixelFormat(OF_PIXELS_BGRA);
+	score_anim.load("score.mov");
+	score_anim.play();
 }
 
 void ofApp::update() {
+	  bg_anim.update();
+		circle_alpha.update();
+	  score_anim.update();
   // MARK: - Generate pointcloud from Kinect data
     kinect.update();
 		numPointsInRegion = 0;
@@ -69,7 +77,7 @@ void ofApp::update() {
 
 void ofApp::draw() {
   ofBackground(0);
-	bg.draw(0,0,ofGetWidth(),ofGetHeight());
+	bg_anim.draw(0, 0, ofGetWidth(), ofGetWidth());
   
   // MARK: - Display the pointcloud & start easyCam
 	easyCam.begin();
@@ -77,9 +85,11 @@ void ofApp::draw() {
 	ofScale(1, -1, kinectZSlider);
 	ofTranslate(0, 0, -1000);
 	
-	ofEnableDepthTest();
-	//pointCloud.drawVertices();
-	ofDisableDepthTest();
+	if(debugMode) {
+		ofEnableDepthTest();
+		pointCloud.drawVertices();
+		ofDisableDepthTest();
+	}
 	
 	if(numPointsInRegion > 100) {
 		ofFill();
@@ -97,14 +107,19 @@ void ofApp::draw() {
 	if(showmsg == true){
 		ofPushMatrix();
 		ofScale(1, -1, 1);
-		score_msg.draw(-320,-240, kinectDistanceSlider-200, 640, 480);
+		ofTranslate(0, 0, kinectDistanceSlider-220);
+		score_anim.draw(-320,-240, 640, 480);
 		ofPopMatrix();
 	} else {
-		score_msg.draw(-320,-240, kinectDistanceSlider-200, 0, 0);
+		score_anim.draw(-320,-240, 0, 0);
 	}
 	
 	
-	texture_plain.draw(xPos-(hoopScale/2), yPos-(hoopScale/2), kinectDistanceSlider-220, hoopScale, hoopScale);
+	// DRAW CIRCLE ANIMATION
+	ofPushMatrix();
+	ofTranslate(0, 0, kinectDistanceSlider-220);
+	circle_alpha.draw(xPos-(hoopScale/2), yPos-(hoopScale/2), hoopScale, hoopScale);
+	ofPopMatrix();
 	
   
 	//ofDrawBox(xPos, yPos, kinectDistanceSlider-220, hoopScale, hoopScale, 400);

@@ -26,9 +26,6 @@ class ofApp : public ofBaseApp{
     ofxKinect kinect;
     ofEasyCam easyCam;
     ofMesh pointCloud;
-    ofImage texture_plain;
-    ofImage bg;
-	  ofImage score_msg;
 	  ofSoundPlayer scoreSound;
     ofxPanel gui;
     ofxFloatSlider kinectDistanceSlider;
@@ -37,6 +34,10 @@ class ofApp : public ofBaseApp{
     ofxFloatSlider kinectZSlider;
 		ofxFloatSlider kinectAngleSlider;
 		ofxFloatSlider kinectSphereZSlider;
+	
+	  ofVideoPlayer circle_alpha;
+	  ofVideoPlayer bg_anim;
+	  ofVideoPlayer score_anim;
 
   
     // socket methods
