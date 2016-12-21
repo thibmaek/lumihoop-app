@@ -5,6 +5,7 @@
 #include "ofxSocketIO.h"
 #include "ofxSocketIOData.h"
 #include "ofxKinect.h"
+#include "ofxXmlSettings.h"
 
 class ofApp : public ofBaseApp{
 	public:
@@ -12,6 +13,8 @@ class ofApp : public ofBaseApp{
     void update();
     void draw();
 	  void keyPressed(int key);
+		void saveState();
+		void loadState();
 	
     /* - methods - */
     void drawPointCloud();
@@ -31,17 +34,19 @@ class ofApp : public ofBaseApp{
     ofMesh pointCloud;
 	  ofSoundPlayer scoreSound;
     ofxPanel gui;
+		ofxXmlSettings state;
     ofxFloatSlider kinectDistanceSlider;
     ofxFloatSlider kinectZSlider;
 		ofxFloatSlider kinectAngleSlider;
 		ofxFloatSlider kinectSphereZSlider;
 	  ofxLabel statusLabel;
 	  ofxLabel hostNameLabel;
+		ofxButton savebtn;
+		ofxButton loadbtn;
 	
 	  ofVideoPlayer circle_alpha;
 	  ofVideoPlayer bg_anim;
 	  ofVideoPlayer score_anim;
-
 	
   
     // socket methods

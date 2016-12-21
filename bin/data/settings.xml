@@ -6,4 +6,6 @@
 <group/>
 <Kinect_distance>2850</Kinect_distance>
 	<Kinect_Angle>0</Kinect_Angle>
+<status>connected</status>
+	<Connect_to>http://MacBook-Pro-van-Kevin-4.local:3000</Connect_to>
 </group>

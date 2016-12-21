@@ -22,6 +22,9 @@ void ofApp::setup(){
 	//ofSetWindowShape(640, 480);
 	
   // MARK: - Initialise debug interface
+	loadbtn.addListener(this, &ofApp::loadState);
+	savebtn.addListener(this, &ofApp::saveState);
+	
   gui.setup();
 	gui.setDefaultWidth(ofGetWidth()/2);
   gui.add(kinectDistanceSlider.setup("Kinect distance", 2850, 80, 5000));
@@ -29,6 +32,8 @@ void ofApp::setup(){
 	gui.add(kinectAngleSlider.setup("Kinect Angle", 0, -1, 1));
 	gui.add(statusLabel.setup("status", ofApp::status));
 	gui.add(hostNameLabel.setup("Connect to", "http://" + hostname + ":3000"));
+	gui.add(savebtn.setup("Save settings"));
+	gui.add(loadbtn.setup("Load settings"));
 
 	
 	numPointsInRegion = 0;
@@ -75,9 +80,20 @@ void ofApp::update() {
 		}
 	}
 }
+											
+void ofApp::saveState() {
+	state.setValue("state:kinectDistanceSlider", kinectDistanceSlider);
+	state.setValue("state:kinectZSlider", kinectZSlider);
+	state.saveFile("state.xml");
+}
+
+void ofApp::loadState() {
+	state.loadFile("state.xml");
+	kinectZSlider = state.getValue("state:kinectZSlider", 2850);
+	kinectDistanceSlider = state.getValue("state:kinectDistanceSlider", -0.239999995);
+}
 
 void ofApp::keyPressed(int key){
-	
 	if (key == ' '){
 		if(debugMode == true){
 			debugMode = false;
