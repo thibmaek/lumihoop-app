@@ -75,6 +75,18 @@ void ofApp::update() {
 	}
 }
 
+void ofApp::keyPressed(int key){
+	
+	if (key == ' '){
+		if(debugMode == true){
+			debugMode = false;
+		}
+		else if(debugMode == false){
+			debugMode = true;
+		}
+	}
+}
+
 void ofApp::draw() {
   ofBackground(0);
 	bg_anim.draw(0, 0, ofGetWidth(), ofGetWidth());

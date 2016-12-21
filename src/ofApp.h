@@ -11,15 +11,17 @@ class ofApp : public ofBaseApp{
 		void setup();
     void update();
     void draw();
-  
+	  void keyPressed(int key);
+	
     /* - methods - */
     void drawPointCloud();
   
     /* - global variables - */
     float hoopScale, xPos, yPos;
 	  int numPointsInRegion, scaleFactorHoop;
-		const char* debugMode = std::getenv("LUMIHOOPDEBUG");
+		//const char* debugMode = std::getenv("LUMIHOOPDEBUG");
   	bool showmsg;
+	  bool debugMode = false;
 	
     /* - instances - */
     ofxSocketIO socketIO;
@@ -39,6 +41,7 @@ class ofApp : public ofBaseApp{
 	  ofVideoPlayer bg_anim;
 	  ofVideoPlayer score_anim;
 
+	
   
     // socket methods
     void onConnection();
