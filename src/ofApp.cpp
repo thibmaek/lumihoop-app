@@ -23,12 +23,13 @@ void ofApp::setup(){
 	
   // MARK: - Initialise debug interface
   gui.setup();
-  gui.add(kinectDistanceSlider.setup("Kinect distance", 2850, 80, 3000));
-	gui.add(kinectXSlider.setup("Kinect Scale X", 1.6, -2, 2));
-	gui.add(kinectYSlider.setup("Kinect Scale Y", -1.6, -2, 2));
+	gui.setDefaultWidth(ofGetWidth()/2);
+  gui.add(kinectDistanceSlider.setup("Kinect distance", 2850, 80, 5000));
 	gui.add(kinectZSlider.setup("Kinect Scale Z", -0.24, -2, 2));
 	gui.add(kinectAngleSlider.setup("Kinect Angle", 0, -1, 1));
-	
+	gui.add(statusLabel.setup("status", ofApp::status));
+	gui.add(hostNameLabel.setup("Connect to", "http://" + hostname + ":3000"));
+
 	
 	numPointsInRegion = 0;
 	scaleFactorHoop = 200;
@@ -116,6 +117,10 @@ void ofApp::draw() {
 		ofNoFill();
 	}
 	
+	if(debugMode) {
+	 ofDrawBox(xPos, yPos, kinectDistanceSlider-220, hoopScale, hoopScale, 400);
+	}
+	
 	if(showmsg == true){
 		ofPushMatrix();
 		ofScale(1, -1, 1);
@@ -132,9 +137,8 @@ void ofApp::draw() {
 	ofTranslate(0, 0, kinectDistanceSlider-220);
 	circle_alpha.draw(xPos-(hoopScale/2), yPos-(hoopScale/2), hoopScale, hoopScale);
 	ofPopMatrix();
+
 	
-  
-	//ofDrawBox(xPos, yPos, kinectDistanceSlider-220, hoopScale, hoopScale, 400);
 	ofPopMatrix();
 	
 	easyCam.end();
@@ -157,6 +161,10 @@ void ofApp::bindEvents () {
   std::string hoopPlacedEventName = "drawHoop";
   socketIO.bindEvent(hoopPlacedEvent, hoopPlacedEventName);
   ofAddListener(hoopPlacedEvent, this, &ofApp::drawHoop);
+	
+	std::string clientsEventName = "clientsChanged";
+	socketIO.bindEvent(clientsChangedEvent, clientsEventName);
+	ofAddListener(clientsChangedEvent, this, &ofApp::drawConnectionUI);
 }
 
  // MARK: - #PROPAGATE_EVENT
@@ -183,4 +191,9 @@ void ofApp::drawHoop (ofxSocketIOData& data) {
   yPos = (data.getFloatValue("relY"))* ofGetHeight();
 	
 	showmsg = false;
+}
+
+void ofApp::drawConnectionUI(ofxSocketIOData& clients) {
+	ofLogNotice("Clients Connected", ofToString(clients.getIntValue("clients")));
+	connections = clients.getIntValue("clients");
 }

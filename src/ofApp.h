@@ -19,6 +19,7 @@ class ofApp : public ofBaseApp{
     /* - global variables - */
     float hoopScale, xPos, yPos;
 	  int numPointsInRegion, scaleFactorHoop;
+		int connections;
 		//const char* debugMode = std::getenv("LUMIHOOPDEBUG");
   	bool showmsg;
 	  bool debugMode = false;
@@ -31,11 +32,11 @@ class ofApp : public ofBaseApp{
 	  ofSoundPlayer scoreSound;
     ofxPanel gui;
     ofxFloatSlider kinectDistanceSlider;
-    ofxFloatSlider kinectXSlider;
-    ofxFloatSlider kinectYSlider;
     ofxFloatSlider kinectZSlider;
 		ofxFloatSlider kinectAngleSlider;
 		ofxFloatSlider kinectSphereZSlider;
+	  ofxLabel statusLabel;
+	  ofxLabel hostNameLabel;
 	
 	  ofVideoPlayer circle_alpha;
 	  ofVideoPlayer bg_anim;
@@ -51,9 +52,12 @@ class ofApp : public ofBaseApp{
     // socket events & responses
     ofEvent<ofxSocketIOData&> hoopPlacedEvent;
     void drawHoop(ofxSocketIOData& data);
-  
+		ofEvent<ofxSocketIOData&> clientsChangedEvent;
+		void drawConnectionUI(ofxSocketIOData& clients);
+	
     // socket variables
     bool isConnected;
     std::string address;
     std::string status;
+		std::string hostname = ofSystem("uname -n | tr -d '\n'");
 };
