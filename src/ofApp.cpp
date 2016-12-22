@@ -19,8 +19,6 @@ void ofApp::setup(){
 	easyCam.enableMouseInput();
 	pointCloud.setMode(OF_PRIMITIVE_POINTS);
 	
-	//ofSetWindowShape(640, 480);
-	
   // MARK: - Initialise debug interface
 	loadbtn.addListener(this, &ofApp::loadState);
 	savebtn.addListener(this, &ofApp::saveState);
@@ -29,16 +27,16 @@ void ofApp::setup(){
 	gui.setDefaultWidth(ofGetWidth()/2);
   gui.add(kinectDistanceSlider.setup("Kinect distance", 2850, 80, 5000));
 	gui.add(kinectZSlider.setup("Kinect Scale Z", -0.24, -2, 2));
-	gui.add(kinectAngleSlider.setup("Kinect Angle", 0, -1, 1));
+	gui.add(kinectAngleSlider.setup("Kinect Angle", 0, -10, 10));
 	gui.add(statusLabel.setup("status", ofApp::status));
 	gui.add(hostNameLabel.setup("Connect to", "http://" + hostname + ":3000"));
 	gui.add(savebtn.setup("Save settings"));
 	gui.add(loadbtn.setup("Load settings"));
 
 	
+	// MARK: - Preset tracking variables
 	numPointsInRegion = 0;
 	scaleFactorHoop = 200;
-	showmsg = false;
   
   // MARK: - Load textures & sounds
 	scoreSound.load("score.mp3");
@@ -53,26 +51,31 @@ void ofApp::setup(){
 }
 
 void ofApp::update() {
-	  bg_anim.update();
-		circle_alpha.update();
-	  score_anim.update();
-  // MARK: - Generate pointcloud from Kinect data
-    kinect.update();
-		numPointsInRegion = 0;
-    if(kinect.isFrameNewDepth()) {
-      pointCloud.clear();
-      for(int y = 0; y < kinect.height; y++) {
-        for(int x= 0; x < kinect.width; x++) {
-          int z = kinect.getDistanceAt(x, y);
-          if(z > 0) {
-            pointCloud.addColor(kinect.getColorAt(x, y));
-            ofVec3f pt = kinect.getWorldCoordinateAt(x, y);
-            pointCloud.addVertex(pt);
+	// MARK: - Update textures
+	bg_anim.update();
+	circle_alpha.update();
+	score_anim.update();
+	
+	// MARK: - Set Kinect angle via slider
+	kinect.setCameraTiltAngle(kinectAngleSlider);
+	
+	// MARK: - Generate pointcloud from Kinect data
+  kinect.update();
+	numPointsInRegion = 0;
+  if(kinect.isFrameNewDepth()) {
+		pointCloud.clear();
+    for(int y = 0; y < kinect.height; y++) {
+      for(int x= 0; x < kinect.width; x++) {
+        int z = kinect.getDistanceAt(x, y);
+        if(z > 0) {
+          pointCloud.addColor(kinect.getColorAt(x, y));
+          ofVec3f pt = kinect.getWorldCoordinateAt(x, y);
+          pointCloud.addVertex(pt);
 						
-						int halfRegionSize = (hoopScale) / 2;
-						if((pt.x > xPos-halfRegionSize && pt.x < xPos + halfRegionSize)
-							 && (pt.y > yPos-halfRegionSize && pt.y < yPos + halfRegionSize)
-							 && (pt.z > kinectDistanceSlider-halfRegionSize && pt.z < kinectDistanceSlider + halfRegionSize)){
+			  	int halfRegionSize = (hoopScale) / 2;
+					if((pt.x > xPos-halfRegionSize && pt.x < xPos + halfRegionSize)
+						&& (pt.y > yPos-halfRegionSize && pt.y < yPos + halfRegionSize)
+						&& (pt.z > kinectDistanceSlider-halfRegionSize && pt.z < kinectDistanceSlider + halfRegionSize)){
 							numPointsInRegion += 1;
           }
 				}
@@ -93,22 +96,24 @@ void ofApp::loadState() {
 	kinectDistanceSlider = state.getValue("state:kinectDistanceSlider", -0.239999995);
 }
 
+// MARK: - #TOGGLE_UI
 void ofApp::keyPressed(int key){
 	if (key == ' '){
-		if(debugMode == true){
+		if(debugMode == true) {
 			debugMode = false;
 		}
-		else if(debugMode == false){
+		else if(debugMode == false) {
 			debugMode = true;
 		}
 	}
 }
 
 void ofApp::draw() {
+	// MARK: - Draw backgrounds
   ofBackground(0);
 	bg_anim.draw(0, 0, ofGetWidth(), ofGetWidth());
   
-  // MARK: - Display the pointcloud & start easyCam
+  // MARK: - Start tracking & drawing hoops
 	easyCam.begin();
 	ofPushMatrix();
 	ofScale(1, -1, kinectZSlider);
@@ -133,11 +138,9 @@ void ofApp::draw() {
 		ofNoFill();
 	}
 	
-	if(debugMode) {
-	 ofDrawBox(xPos, yPos, kinectDistanceSlider-220, hoopScale, hoopScale, 400);
-	}
+	if(debugMode) ofDrawBox(xPos, yPos, kinectDistanceSlider-220, hoopScale, hoopScale, 400);
 	
-	if(showmsg == true){
+	if(showmsg) {
 		ofPushMatrix();
 		ofScale(1, -1, 1);
 		ofTranslate(0, 0, kinectDistanceSlider-220);
@@ -148,15 +151,13 @@ void ofApp::draw() {
 	}
 	
 	
-	// DRAW CIRCLE ANIMATION
+	// MARK: - DRAW CIRCLE ANIMATION
 	ofPushMatrix();
 	ofTranslate(0, 0, kinectDistanceSlider-220);
 	circle_alpha.draw(xPos-(hoopScale/2), yPos-(hoopScale/2), hoopScale, hoopScale);
 	ofPopMatrix();
 
-	
 	ofPopMatrix();
-	
 	easyCam.end();
 	
   // MARK: - Draw debug interface
@@ -177,10 +178,6 @@ void ofApp::bindEvents () {
   std::string hoopPlacedEventName = "drawHoop";
   socketIO.bindEvent(hoopPlacedEvent, hoopPlacedEventName);
   ofAddListener(hoopPlacedEvent, this, &ofApp::drawHoop);
-	
-	std::string clientsEventName = "clientsChanged";
-	socketIO.bindEvent(clientsChangedEvent, clientsEventName);
-	ofAddListener(clientsChangedEvent, this, &ofApp::drawConnectionUI);
 }
 
  // MARK: - #PROPAGATE_EVENT
@@ -207,9 +204,4 @@ void ofApp::drawHoop (ofxSocketIOData& data) {
   yPos = (data.getFloatValue("relY"))* ofGetHeight();
 	
 	showmsg = false;
-}
-
-void ofApp::drawConnectionUI(ofxSocketIOData& clients) {
-	ofLogNotice("Clients Connected", ofToString(clients.getIntValue("clients")));
-	connections = clients.getIntValue("clients");
 }

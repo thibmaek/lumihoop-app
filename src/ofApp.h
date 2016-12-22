@@ -7,24 +7,25 @@
 #include "ofxKinect.h"
 #include "ofxXmlSettings.h"
 
+/* with <3 your friends Kev & Thib */
+
 class ofApp : public ofBaseApp{
 	public:
 		void setup();
     void update();
     void draw();
 	  void keyPressed(int key);
-		void saveState();
-		void loadState();
 	
     /* - methods - */
     void drawPointCloud();
+		void saveState();
+		void loadState();
   
     /* - global variables - */
     float hoopScale, xPos, yPos;
 	  int numPointsInRegion, scaleFactorHoop;
-		int connections;
 		//const char* debugMode = std::getenv("LUMIHOOPDEBUG");
-  	bool showmsg;
+  	bool showmsg = false;
 	  bool debugMode = false;
 	
     /* - instances - */
@@ -57,8 +58,6 @@ class ofApp : public ofBaseApp{
     // socket events & responses
     ofEvent<ofxSocketIOData&> hoopPlacedEvent;
     void drawHoop(ofxSocketIOData& data);
-		ofEvent<ofxSocketIOData&> clientsChangedEvent;
-		void drawConnectionUI(ofxSocketIOData& clients);
 	
     // socket variables
     bool isConnected;
