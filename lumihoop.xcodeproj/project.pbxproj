@@ -9,6 +9,168 @@
 		<string>46</string>
 		<key>objects</key>
 		<dict>
+			<key>8AAF2BA4AFCBEC334841B989</key>
+			<dict>
+				<key>fileRef</key>
+				<string>B0FB861B0D843DF212503B18</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>B0FB861B0D843DF212503B18</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>tinyxmlparser.cpp</string>
+				<key>path</key>
+				<string>../../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>28DCB9949680410908EFD4D5</key>
+			<dict>
+				<key>fileRef</key>
+				<string>8AED12DBC5DC04739E95CD26</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>8AED12DBC5DC04739E95CD26</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>tinyxmlerror.cpp</string>
+				<key>path</key>
+				<string>../../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>8FBDBA8D2DCA49DC504F1850</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>tinyxml.h</string>
+				<key>path</key>
+				<string>../../../../addons/ofxXmlSettings/libs/tinyxml.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>6E54289412D2D94F45A05113</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>126B1BBACED427BD4F54BC45</string>
+					<string>8FBDBA8D2DCA49DC504F1850</string>
+					<string>8AED12DBC5DC04739E95CD26</string>
+					<string>B0FB861B0D843DF212503B18</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>libs</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>B8A4986AE3CFD44755D311C7</key>
+			<dict>
+				<key>fileRef</key>
+				<string>126B1BBACED427BD4F54BC45</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>126B1BBACED427BD4F54BC45</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>tinyxml.cpp</string>
+				<key>path</key>
+				<string>../../../../addons/ofxXmlSettings/libs/tinyxml.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>6A7153E0F5EFF5622F1EB21F</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxXmlSettings.h</string>
+				<key>path</key>
+				<string>../../../../addons/ofxXmlSettings/src/ofxXmlSettings.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>6ECEF0D76BC33727823EADFF</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>BA80450995764F8FABAB1604</string>
+					<string>6A7153E0F5EFF5622F1EB21F</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>src</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>1F4FB5C423662B96ADFDCC0B</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>6ECEF0D76BC33727823EADFF</string>
+					<string>6E54289412D2D94F45A05113</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>ofxXmlSettings</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>40755491CDDD7249B25A1F2D</key>
+			<dict>
+				<key>fileRef</key>
+				<string>BA80450995764F8FABAB1604</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>BA80450995764F8FABAB1604</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>30</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxXmlSettings.cpp</string>
+				<key>path</key>
+				<string>../../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>424C784EEF7B711BA1DD4562</key>
 			<dict>
 				<key>explicitFileType</key>
@@ -1176,6 +1338,7 @@
 					<string>480A780D8D0308AE4A368801</string>
 					<string>9683228C705CA3FF4F2EA945</string>
 					<string>1654D1369875BFEFCE99E26C</string>
+					<string>1F4FB5C423662B96ADFDCC0B</string>
 				</array>
 				<key>isa</key>
 				<string>PBXGroup</string>
@@ -1360,6 +1523,8 @@
 						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l</string>
 						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx</string>
 						<string>../../../../addons/ofxSocketIO/src</string>
+						<string>../../../../addons/ofxXmlSettings/libs</string>
+						<string>../../../../addons/ofxXmlSettings/src</string>
 					</array>
 					<key>CONFIGURATION_BUILD_DIR</key>
 					<string>$(SRCROOT)/bin/</string>
@@ -1448,6 +1613,8 @@
 						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l</string>
 						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx</string>
 						<string>../../../../addons/ofxSocketIO/src</string>
+						<string>../../../../addons/ofxXmlSettings/libs</string>
+						<string>../../../../addons/ofxXmlSettings/src</string>
 					</array>
 					<key>CONFIGURATION_BUILD_DIR</key>
 					<string>$(SRCROOT)/bin/</string>
@@ -1525,6 +1692,10 @@
 					<string>A1A5D91898173A0D4DC07FA9</string>
 					<string>2D0DDFBCCF9B10C4E3CF6790</string>
 					<string>57DCE342580B70382C6C67D9</string>
+					<string>40755491CDDD7249B25A1F2D</string>
+					<string>B8A4986AE3CFD44755D311C7</string>
+					<string>28DCB9949680410908EFD4D5</string>
+					<string>8AAF2BA4AFCBEC334841B989</string>
 				</array>
 				<key>isa</key>
 				<string>PBXSourcesBuildPhase</string>
@@ -1639,6 +1810,8 @@
 						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l</string>
 						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx</string>
 						<string>../../../../addons/ofxSocketIO/src</string>
+						<string>../../../../addons/ofxXmlSettings/libs</string>
+						<string>../../../../addons/ofxXmlSettings/src</string>
 					</array>
 					<key>COMBINE_HIDPI_IMAGES</key>
 					<string>YES</string>
@@ -1717,6 +1890,8 @@
 						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l</string>
 						<string>../../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx</string>
 						<string>../../../../addons/ofxSocketIO/src</string>
+						<string>../../../../addons/ofxXmlSettings/libs</string>
+						<string>../../../../addons/ofxXmlSettings/src</string>
 					</array>
 					<key>COMBINE_HIDPI_IMAGES</key>
 					<string>YES</string>
