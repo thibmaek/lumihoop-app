@@ -8,7 +8,7 @@ Tracking &amp; mapping for the Lumihoop project
 You'll work in groups of two. Use at least one of the technologies we treated troughout the course (openframeworks, arduino, makeymakey, kinect, leap, …).
 
 ## Concept
-@kevinmeyvaert and I teamed up to create an interactive basketball-like installation that could be used in any space as long as you had the hardware at hand.
+[@kevinmeyvaert](https://github.com/kevinmeyvaert) and I teamed up to create an interactive basketball-like installation that could be used in any space as long as you had the hardware at hand.
 You can view the project teaser on Vimeo: https://vimeo.com/196621657
 
 ### Hardware & software used
@@ -26,4 +26,4 @@ We built in a debug UI in this application so it could easily be used in any spa
 
 ![](https://res.cloudinary.com/thibault-maekelbergh/image/upload/v1482491535/Lumihoop/Schermafdruk_2016-12-21_17.29.29.png)
 
-> Special thanks to @wouterverweirder for helping us out and @devinehowest for the fun project opportunity!
+> Special thanks to [@wouterverweirder](https://github.com/wouterverweirder) for helping us out and [@devinehowest](https://github.com/devinehowest) for the fun project opportunity!
